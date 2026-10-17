@@ -14,11 +14,11 @@
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="شركة قمة الامتياز الذهبي للمقاولات العامة | رواد الجودة والإنشاءات">
   <meta property="og:description" content="نقدم حلولاً متكاملة في المقاولات العامة، الطرق، المشاريع البيئية والزراعية والإنشاءات المتخصصة في المملكة العربية السعودية.">
-  <meta property="og:image" content="css/p (1).jpeg">
+  <meta property="og:image" content="css/logo.jpg">
   <meta property="og:type" content="website">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="css/p (1).jpeg">
+  <link rel="icon" type="image/jpeg" href="css/logo.jpg">
 
   <!-- Google Fonts: Tajawal, Cairo, and Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -299,11 +299,36 @@
     .top-bar a:hover {
       color: var(--gold-sand);
     }
+    .top-bar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .top-bar-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      row-gap: 4px;
+      min-width: 0;
+    }
     .top-bar .info-item {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
-      margin-inline-end: 18px;
+      gap: 8px;
+      line-height: 1.5;
+    }
+    .top-bar .info-item + .info-item {
+      margin-inline-start: 20px;
+      padding-inline-start: 20px;
+      border-inline-start: 1px solid rgba(212, 175, 55, 0.22);
+    }
+    .top-bar .lang-btn {
+      flex-shrink: 0;
+      white-space: nowrap;
     }
     .top-bar .info-item i {
       color: var(--gold-primary);
@@ -465,7 +490,7 @@
       display: flex;
       align-items: center;
       background: linear-gradient(rgba(13, 15, 18, 0.82), rgba(20, 24, 30, 0.94)),
-                  url('css/p (1).jpeg') center/cover no-repeat fixed;
+                  url('css/r (1).jpeg') center/cover no-repeat fixed;
       padding: 100px 0 80px;
       overflow: hidden;
     }
@@ -807,7 +832,7 @@
     .accredit-section {
       padding: 80px 0;
       background: linear-gradient(rgba(13, 15, 18, 0.95), rgba(30, 20, 13, 0.95)),
-                  url('css/p (13).jpeg') center/cover fixed;
+                  url('css/h (9).jpeg') center/cover fixed;
       border-top: 1px solid rgba(212, 175, 55, 0.2);
       border-bottom: 1px solid rgba(212, 175, 55, 0.2);
     }
@@ -1500,8 +1525,21 @@
 
     /* Responsive Adjustments */
     @media (max-width: 991px) {
+      /* Header (top bar): centred, tidy rows on tablets */
+      .top-bar {
+        padding: 10px 0;
+      }
+      .top-bar-inner {
+        flex-direction: column;
+        gap: 8px;
+      }
+      .top-bar-list {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
       .top-bar .info-item {
-        margin-bottom: 6px;
+        font-size: 0.8rem;
       }
       .metric-box {
         border-inline-end: none;
@@ -1526,6 +1564,242 @@
         font-size: 0.88rem;
       }
     }
+
+    /* Header (top bar) on phones: address + email stacked, language button beside them */
+    @media (max-width: 575px) {
+      .top-bar {
+        padding: 8px 0;
+        font-size: 0.78rem;
+      }
+      .top-bar-inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .top-bar-list {
+        flex: 1;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: start;
+        row-gap: 3px;
+      }
+      .top-bar .info-item {
+        font-size: 0.76rem;
+        max-width: 100%;
+        align-items: flex-start;
+      }
+      .top-bar .info-item i {
+        margin-top: 4px;
+        font-size: 0.72rem;
+      }
+      .top-bar .info-item + .info-item {
+        margin-inline-start: 0;
+        padding-inline-start: 0;
+        border-inline-start: none;
+      }
+      .top-bar .info-item--iso {
+        display: none;
+      }
+      .top-bar .lang-btn {
+        padding: 5px 12px;
+      }
+    }
+
+    /* ======================================================================
+       LOGO (css/logo.jpg) - brand spots
+       ====================================================================== */
+    .brand-logo-img {
+      width: 54px;
+      height: 54px;
+      object-fit: contain;
+      background: #fff;
+      border: 2px solid var(--gold-primary);
+      border-radius: 14px;
+      padding: 2px;
+      box-shadow: 0 4px 14px rgba(212, 175, 55, 0.35);
+      flex-shrink: 0;
+    }
+    .brand-logo-img--sm { width: 44px; height: 44px; border-radius: 12px; }
+    .brand-logo-img--lg { width: 68px; height: 68px; border-radius: 16px; }
+    .contact-logo {
+      width: 86px;
+      height: 86px;
+      object-fit: contain;
+      background: #fff;
+      border: 2px solid var(--gold-primary);
+      border-radius: 20px;
+      padding: 4px;
+      margin: 0 auto 18px;
+      box-shadow: var(--shadow-gold);
+    }
+    .img-logo-chip {
+      position: absolute;
+      top: 14px;
+      inset-inline-start: 14px;
+      width: 64px;
+      height: 64px;
+      background: #fff;
+      border: 2px solid var(--gold-primary);
+      border-radius: 14px;
+      padding: 3px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+      z-index: 3;
+    }
+    .hero-thumb-wrapper .img-logo-chip img,
+    .feature-img-box .img-logo-chip img,
+    .hero-thumb-wrapper:hover .img-logo-chip img,
+    .feature-img-box:hover .img-logo-chip img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transform: none;
+      border-radius: 10px;
+    }
+    @media (max-width: 575px) {
+      .brand-logo-img { width: 46px; height: 46px; }
+      .img-logo-chip { width: 52px; height: 52px; top: 10px; inset-inline-start: 10px; }
+    }
+
+    /* ======================================================================
+       SERVICE / WORK CARDS: image only
+       ====================================================================== */
+    .service-card-grid.service-card-img {
+      display: block;
+      position: relative;
+      aspect-ratio: 4 / 3;
+      color: inherit;
+    }
+    .service-card-img .service-img-top {
+      height: 100%;
+    }
+
+    /* ======================================================================
+       GALLERY FILTER
+       ====================================================================== */
+    .gallery-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 0 auto 34px;
+      max-width: 980px;
+    }
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(28, 34, 43, 0.75);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      color: #e2e8f0;
+      padding: 9px 18px;
+      border-radius: var(--radius-pill);
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+    .filter-btn i {
+      color: var(--gold-primary);
+      font-size: 0.9rem;
+    }
+    .filter-btn .filter-count {
+      min-width: 26px;
+      padding: 1px 8px;
+      border-radius: var(--radius-pill);
+      background: rgba(212, 175, 55, 0.16);
+      color: var(--gold-sand);
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-align: center;
+    }
+    .filter-btn:hover {
+      border-color: var(--gold-primary);
+      color: var(--gold-sand);
+      transform: translateY(-2px);
+    }
+    .filter-btn:focus-visible {
+      outline: 2px solid var(--gold-sand);
+      outline-offset: 3px;
+    }
+    .filter-btn.active {
+      background: var(--gold-gradient);
+      border-color: transparent;
+      color: var(--brown-dark);
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+    }
+    .filter-btn.active i { color: var(--brown-dark); }
+    .filter-btn.active .filter-count {
+      background: rgba(32, 19, 11, 0.16);
+      color: var(--brown-dark);
+    }
+    @media (max-width: 767px) {
+      .gallery-filters {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 4px 2px 12px;
+        margin-bottom: 22px;
+        scroll-snap-type: x proximity;
+        scrollbar-width: none;
+      }
+      .gallery-filters::-webkit-scrollbar { display: none; }
+      .filter-btn {
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        padding: 8px 14px;
+        font-size: 0.86rem;
+      }
+    }
+
+    /* ======================================================================
+       NAVBAR: one straight row on tablets (landscape) and small laptops
+       (measured with the real Tajawal / Cairo / Outfit fonts)
+       ====================================================================== */
+    .navbar-main .navbar-brand-logo { flex-shrink: 0; white-space: nowrap; }
+    .navbar-main .navbar-collapse { flex: 1 1 auto; min-width: 0; }
+    .navbar-main .navbar-nav { flex-direction: row; flex-wrap: nowrap; }
+    .navbar-main .nav-link-custom { white-space: nowrap; }
+    .navbar-main .navbar-actions { flex-shrink: 0; }
+    .navbar-main .navbar-quote-btn { white-space: nowrap; }
+
+    @media (min-width: 992px) and (max-width: 1399px) {
+      .navbar-main { padding: 10px 0; }
+      .navbar-main .container { gap: 12px; }
+      .navbar-main .navbar-brand { margin: 0; }
+      .navbar-main .navbar-brand-logo { gap: 10px; }
+      .navbar-main .brand-logo-img { width: 46px; height: 46px; border-radius: 12px; }
+      .navbar-main .brand-title { font-size: 1rem; }
+      .navbar-main .brand-subtitle {
+        font-size: 0.66rem;
+        max-width: 220px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .navbar-main .navbar-nav { gap: 0 !important; justify-content: center; }
+      .navbar-main .nav-link-custom { font-size: 0.85rem; padding: 8px 8px; }
+      .navbar-main .nav-link-custom::after { left: 8px; right: 8px; }
+      .navbar-main .navbar-actions { gap: 10px !important; }
+    }
+
+    /* Tablet (992px - 1199px): the quote link is already in the menu, so the extra button steps aside */
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .navbar-main .brand-title { font-size: 0.9rem; }
+      .navbar-main .navbar-quote-btn { display: none !important; }
+    }
+
+    /* Small laptops (1200px - 1399px): keep the quote button, just more compact */
+    @media (min-width: 1200px) and (max-width: 1399px) {
+      .navbar-main .navbar-quote-btn { padding: 10px 18px; font-size: 0.85rem; }
+    }
+
+    /* Large screens: same look as before, just without the wrapping risk */
+    @media (min-width: 1400px) {
+      .navbar-main .navbar-nav { gap: 2px !important; }
+    }
   </style>
 </head>
 <body>
@@ -1535,31 +1809,24 @@
        ========================================================================== -->
   <header class="top-bar" id="sec-topbar">
     <div class="container">
-      <div class="row align-items-center gy-2">
-        <div class="col-lg-8 col-12">
-          <div class="d-flex flex-wrap align-items-center">
-            <div class="info-item">
-              <i class="fa-solid fa-location-dot"></i>
-              <span data-i18n="top_address">الرياض - حي اليرموك - شارع أبي الفتوح الخباز</span>
-            </div>
-            <div class="info-item">
-              <i class="fa-solid fa-envelope"></i>
-              <a href="mailto:ghanem-111@outlook.com">ghanem-111@outlook.com</a>
-            </div>
-            <div class="info-item">
-              <i class="fa-solid fa-award"></i>
-              <span data-i18n="top_iso">معتمدون لدى الهيئة الملكية لتطوير الرياض | ISO</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-12 text-lg-end text-center">
-          <div class="d-inline-flex align-items-center gap-3">
-            <span class="text-gold-sand fw-bold small"><i class="fa-solid fa-phone me-1"></i> 0550780838</span>
-            <button class="lang-btn" id="langSwitchBtn" onclick="toggleLanguage()">
-              <i class="fa-solid fa-globe me-1"></i> <span id="langBtnText">English</span>
-            </button>
-          </div>
-        </div>
+      <div class="top-bar-inner">
+        <ul class="top-bar-list">
+          <li class="info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span data-i18n="top_address">الرياض - حي الرمال - طريق الأمير محمد بن سلمان</span>
+          </li>
+          <li class="info-item">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:ghanem-111@outlook.com">ghanem-111@outlook.com</a>
+          </li>
+          <li class="info-item info-item--iso">
+            <i class="fa-solid fa-award"></i>
+            <span data-i18n="top_iso">معتمدون لدى الهيئة الملكية لتطوير الرياض | ISO</span>
+          </li>
+        </ul>
+        <button class="lang-btn" id="langSwitchBtn" onclick="toggleLanguage()">
+          <i class="fa-solid fa-globe me-1"></i> <span id="langBtnText">English</span>
+        </button>
       </div>
     </div>
   </header>
@@ -1570,9 +1837,7 @@
   <nav class="navbar navbar-expand-lg navbar-main" id="sec-navbar">
     <div class="container">
       <a class="navbar-brand navbar-brand-logo" href="#sec-hero">
-        <div class="logo-badge">
-          <i class="fa-solid fa-crown"></i>
-        </div>
+        <img src="css/logo.jpg" alt="شعار شركة قمة الامتياز الذهبي" class="brand-logo-img">
         <div>
           <h1 class="brand-title" data-i18n="brand_name">شركة قمة الامتياز الذهبي</h1>
           <p class="brand-subtitle" data-i18n="brand_scope">زراعة • صيانة • مقاولات عامة • طرق</p>
@@ -1593,8 +1858,8 @@
       </div>
 
       <!-- Action & Drawer Trigger -->
-      <div class="d-flex align-items-center gap-3">
-        <a href="#sec-quote" class="btn btn-gold btn-sm d-none d-sm-inline-flex" data-i18n="btn_req_quote">
+      <div class="d-flex align-items-center gap-3 navbar-actions">
+        <a href="#sec-quote" class="btn btn-gold btn-sm d-none d-sm-inline-flex navbar-quote-btn" data-i18n="btn_req_quote">
           <i class="fa-solid fa-file-invoice"></i> عرض سعر فوري
         </a>
         <button class="drawer-toggle-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#sideDrawerMenu" aria-controls="sideDrawerMenu" title="القائمة المتقدمة">
@@ -1610,9 +1875,7 @@
   <div class="offcanvas offcanvas-start custom-offcanvas" tabindex="-1" id="sideDrawerMenu" aria-labelledby="sideDrawerMenuLabel">
     <div class="offcanvas-header border-bottom border-secondary">
       <div class="d-flex align-items-center gap-2">
-        <div class="logo-badge" style="width:38px; height:38px; font-size:1.1rem;">
-          <i class="fa-solid fa-crown"></i>
-        </div>
+        <img src="css/logo.jpg" alt="شعار شركة قمة الامتياز الذهبي" class="brand-logo-img brand-logo-img--sm">
         <div>
           <h5 class="offcanvas-title fw-bold text-white fs-6 mb-0" id="sideDrawerMenuLabel" data-i18n="brand_name">شركة قمة الامتياز الذهبي</h5>
           <span class="text-gold small" data-i18n="drawer_lic">سجل معتمد ومصنف • الرياض</span>
@@ -1723,7 +1986,8 @@
 
         <div class="col-lg-5 col-12">
           <div class="hero-thumb-wrapper">
-            <img src="css/p (2).jpeg" alt="مشاريع قمة الامتياز الذهبي للمقاولات" loading="eager">
+            <img src="css/h (7).jpeg" alt="مشاريع قمة الامتياز الذهبي للمقاولات" loading="eager">
+            <div class="img-logo-chip"><img src="css/logo.jpg" alt="شعار شركة قمة الامتياز الذهبي"></div>
             <div class="hero-exp-card">
               <div class="fs-4 fw-black">100%</div>
               <div class="small" data-i18n="hero_exp_text">التزام بالجودة والمواعيد المحددة</div>
@@ -1851,7 +2115,8 @@
         </div>
         <div class="col-lg-6">
           <div class="feature-img-box">
-            <img src="css/p (3).jpeg" alt="فريق عمل شركة قمة الامتياز الذهبي للمقاولات">
+            <img src="css/r (2).jpeg" alt="فريق عمل شركة قمة الامتياز الذهبي للمقاولات">
+            <div class="img-logo-chip"><img src="css/logo.jpg" alt="شعار شركة قمة الامتياز الذهبي"></div>
             <div class="feature-img-badge">
               <i class="fa-solid fa-users-gear text-gold"></i>
               <span data-i18n="about_img_badge">كوادر متخصصة وخبرات ميدانية</span>
@@ -1900,7 +2165,8 @@
         </div>
         <div class="col-lg-6">
           <div class="feature-img-box">
-            <img src="css/p (4).jpeg" alt="رؤية ورسالة قمة الامتياز الذهبي">
+            <img src="css/h (1).jpeg" alt="رؤية ورسالة قمة الامتياز الذهبي">
+            <div class="img-logo-chip"><img src="css/logo.jpg" alt="شعار شركة قمة الامتياز الذهبي"></div>
             <div class="feature-img-badge">
               <i class="fa-solid fa-chart-line text-gold"></i>
               <span data-i18n="vm_img_badge">نمو مستمر وتطوير لا يتوقف</span>
@@ -1971,7 +2237,7 @@
         <div class="col-lg col-md-6 col-12">
           <div class="value-card">
             <div class="value-icon-circle">
-              <i class="fa-solid fa-clock-check"></i>
+              <i class="fa-solid fa-clock"></i>
             </div>
             <h4 class="text-white fs-5 fw-bold mb-2" data-i18n="val_5_title">الالتزام بالوقت والتكاليف</h4>
             <p class="text-white small mb-0" data-i18n="val_5_desc">التسليم الصارم وفق الجدول الزمني المتفق عليه وبدون تجاوز الميزانيات.</p>
@@ -2181,138 +2447,74 @@
       <div class="row g-4 text-start">
         <!-- Service 1 -->
         <div class="col-lg-3 col-md-6">
-          <div class="service-card-grid">
-            <div class="service-img-top">
-              <img src="css/p (5).jpeg" alt="زراعة وصيانة المزروعات">
-            </div>
-            <div class="service-card-body">
-              <div>
-                <div class="service-category-tag" data-i18n="srv_cat_agri">القطاع الزراعي</div>
-                <h4 class="text-white fs-6 fw-bold mb-2" data-i18n="srv1_title">زراعة وصيانة المزروعات</h4>
-                <p class="text-white small mb-3" data-i18n="srv1_desc">أحدث الأساليب الزراعية، صيانة المحاصيل دورياً للحفاظ على جودتها وجمالها على مدار العام.</p>
+          <a href="#sec-srv-agri" class="service-card-grid service-card-img" aria-label="زراعة وصيانة المزروعات" title="زراعة وصيانة المزروعات">
+              <div class="service-img-top">
+                <img src="css/z (2).jpeg" alt="زراعة وصيانة المزروعات">
               </div>
-              <a href="#sec-srv-agri" class="text-gold small fw-bold"><span data-i18n="btn_details">تفاصيل الخدمة</span> <i class="fa-solid fa-arrow-left ms-1"></i></a>
-            </div>
-          </div>
+            </a>
         </div>
 
         <!-- Service 2 -->
         <div class="col-lg-3 col-md-6">
-          <div class="service-card-grid">
-            <div class="service-img-top">
-              <img src="css/p (6).jpeg" alt="إنشاء وتنفيذ الحدائق">
-            </div>
-            <div class="service-card-body">
-              <div>
-                <div class="service-category-tag" data-i18n="srv_cat_land">تنسيق المواقع</div>
-                <h4 class="text-white fs-6 fw-bold mb-2" data-i18n="srv2_title">إنشاء وتنفيذ الحدائق واللاندسكيب</h4>
-                <p class="text-white small mb-3" data-i18n="srv2_desc">أعمال النخيل والمسطحات الخضراء، حدائق عامة وخاصة بتناغم فريد بين الجمال والعملية.</p>
+          <a href="#sec-srv-landscape" class="service-card-grid service-card-img" aria-label="إنشاء وتنفيذ الحدائق" title="إنشاء وتنفيذ الحدائق">
+              <div class="service-img-top">
+                <img src="css/h (2).jpeg" alt="إنشاء وتنفيذ الحدائق">
               </div>
-              <a href="#sec-srv-landscape" class="text-gold small fw-bold"><span data-i18n="btn_details">تفاصيل الخدمة</span> <i class="fa-solid fa-arrow-left ms-1"></i></a>
-            </div>
-          </div>
+            </a>
         </div>
 
         <!-- Service 3 (Roads) -->
         <div class="col-lg-3 col-md-6">
-          <div class="service-card-grid">
-            <div class="service-img-top">
-              <img src="css/p (7).jpeg" alt="أعمال الطرق والأسفلت">
-            </div>
-            <div class="service-card-body">
-              <div>
-                <div class="service-category-tag" data-i18n="srv_cat_roads">البنية التحتية</div>
-                <h4 class="text-white fs-6 fw-bold mb-2" data-i18n="srv3_title">أعمال الطرق والأسفلت والردم</h4>
-                <p class="text-white small mb-3" data-i18n="srv3_desc">سفلتة المخططات، تسوية، توريد مواد الطرق، الرصف والدمك بأحدث الآليات والفرادات.</p>
+          <a href="#sec-roadworks" class="service-card-grid service-card-img" aria-label="أعمال الطرق والأسفلت" title="أعمال الطرق والأسفلت">
+              <div class="service-img-top">
+                <img src="css/r (3).jpeg" alt="أعمال الطرق والأسفلت">
               </div>
-              <a href="#sec-roadworks" class="text-gold small fw-bold"><span data-i18n="btn_details">تفاصيل الخدمة</span> <i class="fa-solid fa-arrow-left ms-1"></i></a>
-            </div>
-          </div>
+            </a>
         </div>
 
         <!-- Service 4 -->
         <div class="col-lg-3 col-md-6">
-          <div class="service-card-grid">
-            <div class="service-img-top">
-              <img src="css/p (8).jpeg" alt="هدم المباني وترحيل المخلفات">
-            </div>
-            <div class="service-card-body">
-              <div>
-                <div class="service-category-tag" data-i18n="srv_cat_demo">الهدم والبيئة</div>
-                <h4 class="text-white fs-6 fw-bold mb-2" data-i18n="srv4_title">هدم المباني وترحيل المخلفات</h4>
-                <p class="text-white small mb-3" data-i18n="srv4_desc">هدم آمن وسريع بضوابط السلامة الكاملة، ترحيل المخلفات بطرق صديقة للبيئة ومصرحة.</p>
+          <a href="#sec-srv-demo" class="service-card-grid service-card-img" aria-label="هدم المباني وترحيل المخلفات" title="هدم المباني وترحيل المخلفات">
+              <div class="service-img-top">
+                <img src="css/t (1).jpeg" alt="هدم المباني وترحيل المخلفات">
               </div>
-              <a href="#sec-srv-demo" class="text-gold small fw-bold"><span data-i18n="btn_details">تفاصيل الخدمة</span> <i class="fa-solid fa-arrow-left ms-1"></i></a>
-            </div>
-          </div>
+            </a>
         </div>
 
         <!-- Service 5 -->
         <div class="col-lg-3 col-md-6">
-          <div class="service-card-grid">
-            <div class="service-img-top">
-              <img src="css/p (9).jpeg" alt="توريد مواد الزراعة والردم">
-            </div>
-            <div class="service-card-body">
-              <div>
-                <div class="service-category-tag" data-i18n="srv_cat_supply">سلاسل الإمداد</div>
-                <h4 class="text-white fs-6 fw-bold mb-2" data-i18n="srv5_title">توريد مواد الزراعة والردم والطرق</h4>
-                <p class="text-white small mb-3" data-i18n="srv5_desc">تربة زراعية، سماد عضوي، مواد ردم معتمدة، حصى ورمل لضمان تماسك البنية التحتية.</p>
+          <a href="#sec-srv-supply" class="service-card-grid service-card-img" aria-label="توريد مواد الزراعة والردم" title="توريد مواد الزراعة والردم">
+              <div class="service-img-top">
+                <img src="css/t (3).jpeg" alt="توريد مواد الزراعة والردم">
               </div>
-              <a href="#sec-srv-supply" class="text-gold small fw-bold"><span data-i18n="btn_details">تفاصيل الخدمة</span> <i class="fa-solid fa-arrow-left ms-1"></i></a>
-            </div>
-          </div>
+            </a>
         </div>
 
         <!-- Service 6 -->
         <div class="col-lg-3 col-md-6">
-          <div class="service-card-grid">
-            <div class="service-img-top">
-              <img src="css/p (10).jpeg" alt="أعمال الحدادة والإنشاءات الحديدية">
-            </div>
-            <div class="service-card-body">
-              <div>
-                <div class="service-category-tag" data-i18n="srv_cat_steel">الإنشاءات المعدنية</div>
-                <h4 class="text-white fs-6 fw-bold mb-2" data-i18n="srv6_title">الحدادة والإنشاءات الحديدية</h4>
-                <p class="text-white small mb-3" data-i18n="srv6_desc">تصنيع وتشييد الهياكل الحديدية، المظلات، المستودعات بدقة واحترافية وفق المواصفات.</p>
+          <a href="#sec-srv-steel" class="service-card-grid service-card-img" aria-label="أعمال الحدادة والإنشاءات الحديدية" title="أعمال الحدادة والإنشاءات الحديدية">
+              <div class="service-img-top">
+                <img src="css/ma (1).jpeg" alt="أعمال الحدادة والإنشاءات الحديدية">
               </div>
-              <a href="#sec-srv-steel" class="text-gold small fw-bold"><span data-i18n="btn_details">تفاصيل الخدمة</span> <i class="fa-solid fa-arrow-left ms-1"></i></a>
-            </div>
-          </div>
+            </a>
         </div>
 
         <!-- Service 7 -->
         <div class="col-lg-3 col-md-6">
-          <div class="service-card-grid">
-            <div class="service-img-top">
-              <img src="css/p (11).jpeg" alt="إنشاء المشاتل وبيوت الظل">
-            </div>
-            <div class="service-card-body">
-              <div>
-                <div class="service-category-tag" data-i18n="srv_cat_shade">المشاريع الزراعية</div>
-                <h4 class="text-white fs-6 fw-bold mb-2" data-i18n="srv7_title">المشاتل وبيوت الظل والهناجر</h4>
-                <p class="text-white small mb-3" data-i18n="srv7_desc">تصميم وبناء بيوت الظل العملاقة، مشاتل مجهزة بالتقنيات الحديثة، مستودعات وهناجر متكاملة.</p>
+          <a href="#sec-srv-nurseries" class="service-card-grid service-card-img" aria-label="إنشاء المشاتل وبيوت الظل" title="إنشاء المشاتل وبيوت الظل">
+              <div class="service-img-top">
+                <img src="css/ma (2).jpeg" alt="إنشاء المشاتل وبيوت الظل">
               </div>
-              <a href="#sec-srv-nurseries" class="text-gold small fw-bold"><span data-i18n="btn_details">تفاصيل الخدمة</span> <i class="fa-solid fa-arrow-left ms-1"></i></a>
-            </div>
-          </div>
+            </a>
         </div>
 
         <!-- Service 8 -->
         <div class="col-lg-3 col-md-6">
-          <div class="service-card-grid">
-            <div class="service-img-top">
-              <img src="css/p (12).jpeg" alt="تركيب الأسوار الأمنية والشبوك">
-            </div>
-            <div class="service-card-body">
-              <div>
-                <div class="service-category-tag" data-i18n="srv_cat_fence">الحماية والأمن</div>
-                <h4 class="text-white fs-6 fw-bold mb-2" data-i18n="srv8_title">تركيب الأسوار الأمنية (الشبوك)</h4>
-                <p class="text-white small mb-3" data-i18n="srv8_desc">حلول متكاملة للأسوار الأمنية الحديدية وشبوك الأراضي والمشاريع لضمان الحماية والخصوصية.</p>
+          <a href="#sec-srv-fencing" class="service-card-grid service-card-img" aria-label="تركيب الأسوار الأمنية والشبوك" title="تركيب الأسوار الأمنية والشبوك">
+              <div class="service-img-top">
+                <img src="css/h (3).jpeg" alt="تركيب الأسوار الأمنية والشبوك">
               </div>
-              <a href="#sec-srv-fencing" class="text-gold small fw-bold"><span data-i18n="btn_details">تفاصيل الخدمة</span> <i class="fa-solid fa-arrow-left ms-1"></i></a>
-            </div>
-          </div>
+            </a>
         </div>
       </div>
     </div>
@@ -2345,7 +2547,7 @@
         </div>
         <div class="col-lg-6">
           <div class="feature-img-box">
-            <img src="css/p (14).jpeg" alt="زراعة وصيانة المزروعات بالرياض">
+            <img src="css/z (1).jpeg" alt="زراعة وصيانة المزروعات بالرياض">
             <div class="feature-img-badge">
               <i class="fa-solid fa-leaf text-gold"></i>
               <span data-i18n="f3_badge_img">تقنيات زراعية متطورة ومستدامة</span>
@@ -2383,7 +2585,7 @@
         </div>
         <div class="col-lg-6">
           <div class="feature-img-box">
-            <img src="css/p (15).jpeg" alt="إنشاء وتنفيذ الحدائق والنخيل">
+            <img src="css/z (2).jpeg" alt="إنشاء وتنفيذ الحدائق والنخيل">
             <div class="feature-img-badge">
               <i class="fa-solid fa-tree text-gold"></i>
               <span data-i18n="f4_badge_img">أعمال النخيل: زراعة وصيانة وتكريب</span>
@@ -2422,7 +2624,7 @@
         </div>
         <div class="col-lg-6">
           <div class="feature-img-box">
-            <img src="css/p (16).jpeg" alt="أعمال سفلتة ورصف الطرق بالرياض">
+            <img src="css/r (4).jpeg" alt="أعمال سفلتة ورصف الطرق بالرياض">
             <div class="feature-img-badge">
               <i class="fa-solid fa-road-barrier text-gold"></i>
               <span data-i18n="f5_badge_img">معدات سفلتة ورصف متطورة</span>
@@ -2460,7 +2662,7 @@
         </div>
         <div class="col-lg-6">
           <div class="feature-img-box">
-            <img src="css/p (17).jpeg" alt="هدم المباني وترحيل المخلفات">
+            <img src="css/t (2).jpeg" alt="هدم المباني وترحيل المخلفات">
             <div class="feature-img-badge">
               <i class="fa-solid fa-dumpster text-gold"></i>
               <span data-i18n="f6_badge_img">ترحيل منظم والتزام بضوابط البلدية</span>
@@ -2498,7 +2700,7 @@
         </div>
         <div class="col-lg-6">
           <div class="feature-img-box">
-            <img src="css/p (18).jpeg" alt="توريد مواد الزراعة والردم">
+            <img src="css/t (4).jpeg" alt="توريد مواد الزراعة والردم">
             <div class="feature-img-badge">
               <i class="fa-solid fa-mountain text-gold"></i>
               <span data-i18n="f7_badge_img">تربة مختارة ومواد ردم مطابقة للمواصفات</span>
@@ -2536,7 +2738,7 @@
         </div>
         <div class="col-lg-6">
           <div class="feature-img-box">
-            <img src="css/p (19).jpeg" alt="أعمال الحدادة والهياكل الحديدية">
+            <img src="css/ma (3).jpeg" alt="أعمال الحدادة والهياكل الحديدية">
             <div class="feature-img-badge">
               <i class="fa-solid fa-cubes text-gold"></i>
               <span data-i18n="f8_badge_img">هياكل فولاذية ومعايير تحمل فائقة</span>
@@ -2574,7 +2776,7 @@
         </div>
         <div class="col-lg-6">
           <div class="feature-img-box">
-            <img src="css/p (20).jpeg" alt="إنشاء مشاتل وبيوت ظل بالزلفي والرياض">
+            <img src="css/ma (4).jpeg" alt="إنشاء مشاتل وبيوت ظل بالزلفي والرياض">
             <div class="feature-img-badge">
               <i class="fa-solid fa-sun-plant-wilt text-gold"></i>
               <span data-i18n="f9_badge_img">أكبر مشاتل بيوت الظل بمساحة 130 ألف م²</span>
@@ -2612,7 +2814,7 @@
         </div>
         <div class="col-lg-6">
           <div class="feature-img-box">
-            <img src="css/p (21).jpeg" alt="تركيب الشبوك والأسوار الأمنية">
+            <img src="css/z (5).jpeg" alt="تركيب الشبوك والأسوار الأمنية">
             <div class="feature-img-badge">
               <i class="fa-solid fa-shield-virus text-gold"></i>
               <span data-i18n="f10_badge_img">أسوار وشبوك أمنية عالية التحمل</span>
@@ -2648,7 +2850,7 @@
             </div>
           </div>
           <div class="col-lg-4 text-center">
-            <img src="css/p (22).jpeg" alt="الرياض الخضراء" class="rounded-4 border border-success shadow-lg mx-auto" style="max-height: 250px; object-fit: cover;">
+            <img src="css/z (4).jpeg" alt="الرياض الخضراء" class="rounded-4 border border-success shadow-lg mx-auto" style="max-height: 250px; object-fit: cover;">
           </div>
         </div>
       </div>
@@ -2677,7 +2879,7 @@
         <div class="col-lg-3 col-md-6">
           <div class="fleet-card">
             <div class="fleet-img">
-              <img src="css/p (23).jpeg" alt="فرادات ورصاصات الأسفلت">
+              <img src="css/r (5).jpeg" alt="فرادات ورصاصات الأسفلت">
             </div>
             <div class="p-3">
               <h5 class="text-white fs-6 fw-bold mb-1" data-i18n="fleet_1_title">فرادات ورصاصات الأسفلت</h5>
@@ -2689,7 +2891,7 @@
         <div class="col-lg-3 col-md-6">
           <div class="fleet-card">
             <div class="fleet-img">
-              <img src="css/p (24).jpeg" alt="حفارات وبوكلاينات الهدم">
+              <img src="css/r (6).jpeg" alt="حفارات وبوكلاينات الهدم">
             </div>
             <div class="p-3">
               <h5 class="text-white fs-6 fw-bold mb-1" data-i18n="fleet_2_title">حفارات وبوكلاينات الهدم</h5>
@@ -2701,7 +2903,7 @@
         <div class="col-lg-3 col-md-6">
           <div class="fleet-card">
             <div class="fleet-img">
-              <img src="css/p (25).jpeg" alt="شاحنات وتريلات النقل والردم">
+              <img src="css/r (7).jpeg" alt="شاحنات وتريلات النقل والردم">
             </div>
             <div class="p-3">
               <h5 class="text-white fs-6 fw-bold mb-1" data-i18n="fleet_3_title">شاحنات وتريلات النقل والردم</h5>
@@ -2713,7 +2915,7 @@
         <div class="col-lg-3 col-md-6">
           <div class="fleet-card">
             <div class="fleet-img">
-              <img src="css/p (26).jpeg" alt="أوناش ومعدات نقل النخيل">
+              <img src="css/z (5).jpeg" alt="أوناش ومعدات نقل النخيل">
             </div>
             <div class="p-3">
               <h5 class="text-white fs-6 fw-bold mb-1" data-i18n="fleet_4_title">أوناش ومعدات نقل النخيل</h5>
@@ -2761,12 +2963,12 @@
         <div class="col-lg-6">
           <div class="row g-3">
             <div class="col-6">
-              <img src="css/p (27).jpeg" alt="معايير الأمان" class="rounded-4 w-100 mb-3 shadow" style="height: 220px; object-fit: cover;">
-              <img src="css/p (28).jpeg" alt="فريق عمل المقاولات" class="rounded-4 w-100 shadow" style="height: 160px; object-fit: cover;">
+              <img src="css/r (8).jpeg" alt="معايير الأمان" class="rounded-4 w-100 mb-3 shadow" style="height: 220px; object-fit: cover;">
+              <img src="css/r (9).jpeg" alt="فريق عمل المقاولات" class="rounded-4 w-100 shadow" style="height: 160px; object-fit: cover;">
             </div>
             <div class="col-6 pt-4">
-              <img src="css/p (29).jpeg" alt="أعمال الموقع" class="rounded-4 w-100 mb-3 shadow" style="height: 160px; object-fit: cover;">
-              <img src="css/p (30).jpeg" alt="معدات السلامة" class="rounded-4 w-100 shadow" style="height: 220px; object-fit: cover;">
+              <img src="css/r (10).jpeg" alt="أعمال الموقع" class="rounded-4 w-100 mb-3 shadow" style="height: 160px; object-fit: cover;">
+              <img src="css/r (11).jpeg" alt="معدات السلامة" class="rounded-4 w-100 shadow" style="height: 220px; object-fit: cover;">
             </div>
           </div>
         </div>
@@ -2790,6 +2992,28 @@
         <p class="section-subtitle" data-i18n="port_sub">
           نفخر بوضع بصمتنا في كبرى المشاريع الاستراتيجية والحيوية بالمملكة مع أبرز الجهات والشركات العملاقة.
         </p>
+      </div>
+
+      <!-- Gallery Filter -->
+      <div class="gallery-filters" id="galleryFilters" role="group" aria-label="تصنيف الأعمال">
+        <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">
+          <i class="fa-solid fa-border-all"></i><span data-i18n="flt_all">الكل</span><span class="filter-count"></span>
+        </button>
+        <button type="button" class="filter-btn" data-filter="z" aria-pressed="false">
+          <i class="fa-solid fa-tree"></i><span data-i18n="flt_z">النخيل والزراعة</span><span class="filter-count"></span>
+        </button>
+        <button type="button" class="filter-btn" data-filter="t" aria-pressed="false">
+          <i class="fa-solid fa-truck"></i><span data-i18n="flt_t">الترحيل والتوريد</span><span class="filter-count"></span>
+        </button>
+        <button type="button" class="filter-btn" data-filter="h" aria-pressed="false">
+          <i class="fa-solid fa-mountain"></i><span data-i18n="flt_h">الحجر واللاندسكيب</span><span class="filter-count"></span>
+        </button>
+        <button type="button" class="filter-btn" data-filter="r" aria-pressed="false">
+          <i class="fa-solid fa-road"></i><span data-i18n="flt_r">الطرق والردم</span><span class="filter-count"></span>
+        </button>
+        <button type="button" class="filter-btn" data-filter="ma" aria-pressed="false">
+          <i class="fa-solid fa-warehouse"></i><span data-i18n="flt_ma">المشاتل والبيوت الزراعية</span><span class="filter-count"></span>
+        </button>
       </div>
 
       <!-- Gallery Grid -->
@@ -2970,7 +3194,7 @@
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
                 <div class="accordion-body" data-i18n="faq_a1">
-                  يقع مقرنا الرئيسي في مدينة الرياض (حي اليرموك)، ونمتلك جاهزية ميدانية وأسطولاً تشغيلياً لتنفيذ المشاريع الكبرى في مختلف مناطق المملكة، بما في ذلك الدرعية، الزلفي، نيوم، والمناطق الوسطى والغربية والشرقية.
+                  يقع مقرنا الرئيسي في مدينة الرياض (حي الرمال)، ونمتلك جاهزية ميدانية وأسطولاً تشغيلياً لتنفيذ المشاريع الكبرى في مختلف مناطق المملكة، بما في ذلك الدرعية، الزلفي، نيوم، والمناطق الوسطى والغربية والشرقية.
                 </div>
               </div>
             </div>
@@ -3042,6 +3266,7 @@
   <section class="contact-section" id="sec-contact">
     <div class="container">
       <div class="text-center mb-5">
+        <img src="css/logo.jpg" alt="شعار شركة قمة الامتياز الذهبي" class="contact-logo">
         <div class="section-badge">
           <i class="fa-solid fa-address-book"></i> <span data-i18n="contact_badge">تواصل مباشر</span>
         </div>
@@ -3105,7 +3330,7 @@
             <div class="flex-grow-1">
               <span class="badge bg-secondary mb-1">العنوان والفرع الرئيسي</span>
               <h6 class="text-white fw-bold mb-0">المملكة العربية السعودية - الرياض</h6>
-              <p class="text-gold-sand small mb-0">حي اليرموك - شارع أبي الفتوح الخباز</p>
+              <p class="text-gold-sand small mb-0">حي الرمال - طريق الأمير محمد بن سلمان</p>
             </div>
           </div>
         </div>
@@ -3129,9 +3354,7 @@
         <!-- Col 1: Brand Info -->
         <div class="col-lg-4 col-md-6">
           <div class="d-flex align-items-center gap-3 mb-3">
-            <div class="logo-badge">
-              <i class="fa-solid fa-crown"></i>
-            </div>
+            <img src="css/logo.jpg" alt="شعار شركة قمة الامتياز الذهبي" class="brand-logo-img brand-logo-img--lg">
             <div>
               <h5 class="text-white fw-bold mb-0 fs-5" data-i18n="brand_name">شركة قمة الامتياز الذهبي</h5>
               <span class="text-gold small" data-i18n="brand_scope">زراعة • صيانة • مقاولات عامة • طرق</span>
@@ -3177,7 +3400,7 @@
         <!-- Col 4: Official Contacts -->
         <div class="col-lg-4 col-md-6">
           <h5 class="footer-col-title" data-i18n="footer_contact_title">بيانات التواصل المباشر</h5>
-          <p class="small text-white mb-2"><i class="fa-solid fa-location-dot text-gold me-2"></i> الرياض - حي اليرموك - شارع أبي الفتوح الخباز</p>
+          <p class="small text-white mb-2"><i class="fa-solid fa-location-dot text-gold me-2"></i> الرياض - حي الرمال - طريق الأمير محمد بن سلمان</p>
           <p class="small text-white mb-2"><i class="fa-solid fa-envelope text-gold me-2"></i> ghanem-111@outlook.com</p>
           <p class="small text-white mb-2"><i class="fa-solid fa-phone text-gold me-2"></i> الإدارة: 00966555126819</p>
           <p class="small text-white mb-3"><i class="fa-solid fa-phone text-gold me-2"></i> الشؤون الهندسية: 00966502852711</p>
@@ -3273,7 +3496,7 @@
         client: "شركة اتحاد فاست (FAST Consortium)",
         loc: "مسار مترو الرياض",
         desc: "تنفيذ عمليات خلع ونقل وإعادة زراعة النخيل والأشجار الضخمة على طول مسارات ومحطات مشروع قطار الرياض الحيوي، مع الحفاظ الكامل على سلامة الأشجار ونموها وإعادة ربطها بشبكات الري الحديثة.",
-        img: "css/p (31).jpeg"
+        img: "css/z (1).jpeg"
       },
       2: {
         tag: "حفريات الدرعية",
@@ -3281,7 +3504,7 @@
         client: "شركة اليمامة للمقاولات",
         loc: "الدرعية التاريخية",
         desc: "إنجاز ملحمي شمل قلع ونقل وتركيب 1500 نخلة وشجرة معمرة بمعدات رفع وتثبيت بالصناديق الخشبية المتطورة ضمن مشروع تطوير حفريات الدرعية التراثية.",
-        img: "css/p (32).jpeg"
+        img: "css/z (2).jpeg"
       },
       3: {
         tag: "منتزه طريف بارك",
@@ -3289,7 +3512,7 @@
         client: "شركة نباتات",
         loc: "طريف بارك - الدرعية",
         desc: "توريد وغرس 580 نخلة بلدي منتقاة بعناية فائقة لتزيين المسطحات العامة ومحيط منتزه طريف بارك، متوافقة مع الهوية التراثية للدرعية.",
-        img: "css/p (33).jpeg"
+        img: "css/z (3).jpeg"
       },
       4: {
         tag: "مشروع البجيري التاريخي",
@@ -3297,7 +3520,7 @@
         client: "شركة البواني",
         loc: "حي البجيري - الدرعية",
         desc: "أعمال زراعة وتنسيق 150 نخلة شاهقة في قلب حي البجيري التراثي، مع تمديد شبكات الري الأوتوماتيكية والحماية الزراعية.",
-        img: "css/p (34).jpeg"
+        img: "css/z (4).jpeg"
       },
       5: {
         tag: "مشروع الجوهرة بالرياض",
@@ -3305,7 +3528,7 @@
         client: "شركة رمسيس",
         loc: "الرياض - مشروع الجوهرة",
         desc: "تصنيع وتشييد سياج أمني حديدي مجلفن عالي الحماية بطول 5,000 متر طولي، مع القواعد الخرسانية والبوابات الأمنية لتأمين الموقع بالكامل.",
-        img: "css/p (35).jpeg"
+        img: "css/h (6).jpeg"
       },
       6: {
         tag: "مشاتل حمود الذييب",
@@ -3313,7 +3536,7 @@
         client: "مشروع حمود الذييب",
         loc: "محافظة الزلفي",
         desc: "تصميم وتنفيذ بيوت ظل زراعية بأحدث الهياكل المقاومة للرياح وشبكات الري الضبابي لإنتاج ورعاية الشتلات والمزروعات.",
-        img: "css/p (36).jpeg"
+        img: "css/ma (5).jpeg"
       },
       7: {
         tag: "أعمال الطرق والأسفلت",
@@ -3321,7 +3544,7 @@
         client: "مقاولات قمة الامتياز الذهبي",
         loc: "منطقة الرياض والمحافظات",
         desc: "تنفيذ أعمال فرش الأسفلت، الرصف، الدمك بالاختبارات المعملية، تسوية المخططات وإنشاء طبقات البيسكورس والردم بأحدث المعدات.",
-        img: "css/p (37).jpeg"
+        img: "css/r (12).jpeg"
       },
       8: {
         tag: "مشروع نيوم الحالم (NEOM)",
@@ -3329,7 +3552,7 @@
         client: "شركتا اليمامة وشبه الجزيرة",
         loc: "منطقة نيوم",
         desc: "عمليات قلع دقيقة لأشجار نادرة وتغليف جذورها بالصناديق الخشبية ونقلها عبر مسافات طويلة وتثبيتها بمواقعها المحددة في نيوم.",
-        img: "css/p (38).jpeg"
+        img: "css/z (5).jpeg"
       },
       9: {
         tag: "مشروع نساح العملاق",
@@ -3337,7 +3560,7 @@
         client: "مشروع نساح الزراعي",
         loc: "نساح",
         desc: "واحد من أضخم مشروعات بيوت الظل في المملكة بمساحة تفوق 130 ألف متر مربع، شاملة أعمال الحدادة والإنشاءات والري.",
-        img: "css/p (39).jpeg"
+        img: "css/ma (6).jpeg"
       },
       10: {
         tag: "مركز كبسارك KAPSARC",
@@ -3345,7 +3568,7 @@
         client: "مركز الملك عبدالله للدراسات البترولية",
         loc: "الرياض",
         desc: "توريد وتجهيز مواد الزراعة عالية النقاوة، بالإضافة إلى أخشاب وسنادات الأشجار لدعم الغطاء النباتي حول مرافق المركز الأكاديمية.",
-        img: "css/p (40).jpeg"
+        img: "css/t (3).jpeg"
       },
       11: {
         tag: "مسار قطار الرياض",
@@ -3353,7 +3576,7 @@
         client: "شركة نباتات ومشاريع مواطنين",
         loc: "الرياض",
         desc: "هدم آمن لعمارتين واقعتين ضمن مسار قطار الرياض، مع فرز وترحيل كافة المخلفات والأنقاض وفق اشتراطات الأمن والسلامة الصارمة.",
-        img: "css/p (41).jpeg"
+        img: "css/t (1).jpeg"
       },
       12: {
         tag: "محافظة الزلفي",
@@ -3361,7 +3584,7 @@
         client: "مشروع مشتل الفندق",
         loc: "محافظة الزلفي",
         desc: "إعداد وتجهيز التربة وشبكات الري الأوتوماتيكي وزراعة 30 ألف شجرة وتحويلها في المراكن الزراعية بكفاءة عالية.",
-        img: "css/p (42).jpeg"
+        img: "css/ma (7).jpeg"
       }
     };
 
@@ -3383,19 +3606,40 @@
     /* ==========================================================================
        GALLERY ENGINE - Load More + Lightbox
        ========================================================================== */
-    const allImages = Array.from({length: 50}, (_, i) => `css/p (${i + 1}).jpeg`);
+    /* الأقسام: المفتاح = بادئة اسم الصورة داخل مجلد css/ */
+    const GALLERY_CATEGORIES = [
+      { key: 'z',  count: 5  },   // النخيل والزراعة      : z (1) .. z (5)
+      { key: 't',  count: 4  },   // الترحيل والتوريد     : t (1) .. t (4)
+      { key: 'h',  count: 9  },   // الحجر واللاندسكيب    : h (1) .. h (9)
+      { key: 'r',  count: 26 },   // الطرق والردم        : r (1) .. r (26)
+      { key: 'ma', count: 10 }    // المشاتل والبيوت الزراعية : ma (1) .. ma (10)
+    ];
+
+    /* ترتيب "الكل": توزيع متبادل بين الأقسام عشان الطرق ما تغطي على الباقي */
+    const allImages = [];
+    (function buildImageList() {
+      const maxCount = Math.max(...GALLERY_CATEGORIES.map(c => c.count));
+      for (let i = 1; i <= maxCount; i++) {
+        GALLERY_CATEGORIES.forEach(c => {
+          if (i <= c.count) allImages.push({ src: `css/${c.key} (${i}).jpeg`, cat: c.key });
+        });
+      }
+    })();
+
     const BATCH = 8;
     let galleryLoaded = 0;
     let lightboxIndex = 0;
-    let visibleImages = [];
+    let activeFilter = 'all';
+    let filteredImages = allImages.slice();
 
-    function buildGalleryItem(src, idx) {
+    function buildGalleryItem(entry, idx) {
       const div = document.createElement('div');
       div.className = 'gallery-item';
       div.setAttribute('data-idx', idx);
+      div.setAttribute('data-cat', entry.cat);
       div.onclick = () => openLightbox(idx);
       div.innerHTML = `
-        <img src="${src}" alt="صورة أعمال قمة الامتياز الذهبي" loading="lazy">
+        <img src="${entry.src}" alt="صورة أعمال قمة الامتياز الذهبي" loading="lazy">
         <div class="gallery-item-overlay">
           <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
         </div>
@@ -3403,16 +3647,40 @@
       return div;
     }
 
+    function updateFilterCounts() {
+      document.querySelectorAll('#galleryFilters .filter-btn').forEach(btn => {
+        const key = btn.getAttribute('data-filter');
+        const total = key === 'all' ? allImages.length : allImages.filter(i => i.cat === key).length;
+        btn.querySelector('.filter-count').textContent = total;
+      });
+    }
+
+    function setGalleryFilter(key) {
+      activeFilter = key;
+      document.querySelectorAll('#galleryFilters .filter-btn').forEach(btn => {
+        const on = btn.getAttribute('data-filter') === key;
+        btn.classList.toggle('active', on);
+        btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      filteredImages = key === 'all' ? allImages.slice() : allImages.filter(i => i.cat === key);
+      galleryLoaded = 0;
+      document.getElementById('galleryGrid').innerHTML = '';
+      const btn = document.getElementById('loadMoreBtn');
+      btn.disabled = false;
+      btn.style.display = '';
+      btn.querySelector('span').innerHTML = '<i class="fa-solid fa-plus-circle me-2"></i> <span data-i18n="btn_load_more">عرض المزيد من الصور</span>';
+      loadMoreImages();
+    }
+
     function loadMoreImages() {
       const grid = document.getElementById('galleryGrid');
       const btn  = document.getElementById('loadMoreBtn');
       const status = document.getElementById('galleryStatus');
 
-      const nextBatch = allImages.slice(galleryLoaded, galleryLoaded + BATCH);
-      nextBatch.forEach((src, i) => {
+      const nextBatch = filteredImages.slice(galleryLoaded, galleryLoaded + BATCH);
+      nextBatch.forEach((entry, i) => {
         const globalIdx = galleryLoaded + i;
-        visibleImages.push(src);
-        const item = buildGalleryItem(src, globalIdx);
+        const item = buildGalleryItem(entry, globalIdx);
         item.style.opacity = '0';
         item.style.transform = 'translateY(20px)';
         grid.appendChild(item);
@@ -3424,21 +3692,22 @@
       });
       galleryLoaded += nextBatch.length;
 
-      const remaining = allImages.length - galleryLoaded;
+      const total = filteredImages.length;
+      const remaining = total - galleryLoaded;
       if (remaining <= 0) {
-        btn.disabled = true;
-        btn.querySelector('span').innerHTML = '<i class="fa-solid fa-check-circle me-2"></i> تم عرض كافة الصور';
-        status.innerHTML = '<span style="color: var(--gold-primary);"><i class="fa-solid fa-circle-check me-1"></i> تم اكتمال عرض جميع المشروعات (50 صورة)</span>';
+        btn.style.display = 'none';
+        status.innerHTML = `<span style="color: var(--gold-primary);"><i class="fa-solid fa-circle-check me-1"></i> تم عرض جميع الصور (${total} صورة)</span>`;
       } else {
-        status.innerHTML = `تم عرض <strong style="color: var(--gold-primary); font-size: 1.05rem;">${galleryLoaded}</strong> من <strong style="color: var(--gold-primary); font-size: 1.05rem;">${allImages.length}</strong> صورة • <strong style="color: var(--gold-primary); font-size: 1.05rem;">${remaining}</strong> صورة متبقية`;
+        btn.style.display = '';
+        status.innerHTML = `تم عرض <strong style="color: var(--gold-primary); font-size: 1.05rem;">${galleryLoaded}</strong> من <strong style="color: var(--gold-primary); font-size: 1.05rem;">${total}</strong> صورة • <strong style="color: var(--gold-primary); font-size: 1.05rem;">${remaining}</strong> صورة متبقية`;
       }
     }
 
-    /* Lightbox */
+    /* Lightbox (يتنقل داخل القسم المختار فقط) */
     function openLightbox(idx) {
       lightboxIndex = idx;
-      document.getElementById('lightboxImg').src = allImages[idx];
-      document.getElementById('lightboxCounter').textContent = `${idx + 1} / ${allImages.length}`;
+      document.getElementById('lightboxImg').src = filteredImages[idx].src;
+      document.getElementById('lightboxCounter').textContent = `${idx + 1} / ${filteredImages.length}`;
       document.getElementById('galleryLightbox').classList.add('active');
       document.body.style.overflow = 'hidden';
     }
@@ -3450,9 +3719,9 @@
       if (e.target === document.getElementById('galleryLightbox')) closeLightbox();
     }
     function lightboxNav(dir) {
-      lightboxIndex = (lightboxIndex + dir + allImages.length) % allImages.length;
-      document.getElementById('lightboxImg').src = allImages[lightboxIndex];
-      document.getElementById('lightboxCounter').textContent = `${lightboxIndex + 1} / ${allImages.length}`;
+      lightboxIndex = (lightboxIndex + dir + filteredImages.length) % filteredImages.length;
+      document.getElementById('lightboxImg').src = filteredImages[lightboxIndex].src;
+      document.getElementById('lightboxCounter').textContent = `${lightboxIndex + 1} / ${filteredImages.length}`;
     }
     document.addEventListener('keydown', e => {
       const lb = document.getElementById('galleryLightbox');
@@ -3462,8 +3731,14 @@
       if (e.key === 'ArrowLeft')    lightboxNav(1);
     });
 
-    /* Auto-init gallery on page load */
-    document.addEventListener('DOMContentLoaded', () => { loadMoreImages(); });
+    /* Filter buttons + auto-init gallery on page load */
+    document.addEventListener('DOMContentLoaded', () => {
+      updateFilterCounts();
+      document.querySelectorAll('#galleryFilters .filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => setGalleryFilter(btn.getAttribute('data-filter')));
+      });
+      setGalleryFilter('all');
+    });
 
     /* Floating Contacts Menu Toggle */
     function toggleFloatingMenu() {
@@ -3511,8 +3786,14 @@
 
     const translations = {
       en: {
-        top_address: "Riyadh - Al Yarmouk Dist. - Abi Al-Futouh Al-Khabbaz St.",
+        top_address: "Riyadh - Al Rimal Dist. - Prince Mohammed bin Salman Rd.",
         top_iso: "Accredited by Royal Commission for Riyadh City | ISO",
+        flt_all: "All",
+        flt_z: "Palms & Agriculture",
+        flt_t: "Hauling & Supply",
+        flt_h: "Stone & Landscape",
+        flt_r: "Roads & Backfill",
+        flt_ma: "Nurseries & Greenhouses",
         brand_name: "Qimat Alimtiaz Aldhahabi Co.",
         brand_scope: "Agriculture • Maintenance • General Contracting • Roads",
         nav_home: "Home",
@@ -3781,7 +4062,7 @@
         faq_title2: "Questions & Answers",
         faq_sub: "Find key insights regarding our capabilities, licenses, and regional mobilization across Saudi Arabia.",
         faq_q1: "What geographic regions does Qimat Alimtiaz Aldhahabi cover in KSA?",
-        faq_a1: "Our headquarters are based in Riyadh (Al Yarmouk), with full fleet mobilization to execute mega projects across Diriyah, Al Zulfi, NEOM, and all Central, Western, and Eastern regions.",
+        faq_a1: "Our headquarters are based in Riyadh (Al Rimal), with full fleet mobilization to execute mega projects across Diriyah, Al Zulfi, NEOM, and all Central, Western, and Eastern regions.",
         faq_q2: "Is the company officially accredited with ISO certificates?",
         faq_a2: "Yes, we are ISO 9001 certified for quality management and officially accredited by the Royal Commission for Riyadh City (RCRC).",
         faq_q3: "How do you handle demolition and excavation waste?",
